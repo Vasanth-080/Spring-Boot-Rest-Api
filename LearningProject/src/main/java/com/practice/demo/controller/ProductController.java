@@ -1,5 +1,6 @@
 package com.practice.demo.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.practice.demo.entity.Product;
 import com.practice.demo.exception.ResouseNotFoundException;
 import com.practice.demo.repository.ProductRepository;
+import com.practice.demo.service.UserDataService;
 
 @RestController
 @RequestMapping("/api")
@@ -25,6 +27,16 @@ public class ProductController {
 
 	@Autowired
 	private ProductRepository productRepository;
+	
+	@Autowired
+	private UserDataService data;
+	
+//	@PostMapping(value="/readData")
+//	public  String getData() throws IOException {
+//		data.readData();
+//		return "job invoked";
+//	}
+
 
 	// save values in database
 	@PostMapping
